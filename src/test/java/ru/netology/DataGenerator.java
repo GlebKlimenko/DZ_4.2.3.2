@@ -15,19 +15,19 @@ public class DataGenerator {
     }
     static Faker faker = new Faker(new Locale("ru"));
 
-    static DataName dataName(String status) {
+    static UserInfo dataName(String status) {
 
-        return new DataName(faker.name().lastName(), faker.internet().password(), status);
+        return new UserInfo(faker.name().lastName(), faker.internet().password(), status);
     }
 
-    static String noValidLog() {
-        String noValidLog = faker.name().username();
-        return noValidLog;
+    static String generateLogin() {
+        String generateLogin = faker.name().username();
+        return generateLogin;
     }
 
-    static String noValidPass() {
-        String noValidPass = faker.internet().password();
-        return noValidPass;
+    static String generatePassword() {
+        String generatePassword = faker.internet().password();
+        return generatePassword;
     }
 
     private static RequestSpecification requestSpec = new RequestSpecBuilder()
@@ -38,7 +38,7 @@ public class DataGenerator {
             .log(LogDetail.ALL)
             .build();
 
-    static void setUpAll(DataName usr) {
+    static void activeUser(UserInfo usr) {
         // сам запрос
         given() // "дано"
                 .spec(requestSpec) // указываем, какую спецификацию используем
