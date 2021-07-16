@@ -15,7 +15,7 @@ public class DataGenerator {
     }
     static Faker faker = new Faker(new Locale("ru"));
 
-    static UserInfo dataName(String status) {
+    static UserInfo UserInfo(String status) {
 
         return new UserInfo(faker.name().lastName(), faker.internet().password(), status);
     }

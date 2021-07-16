@@ -18,7 +18,7 @@ public class AuthTest {
 
     @Test
     void inputValidLogPasStatActive() {
-        val user = DataGenerator.dataName("active");
+        val user = DataGenerator.UserInfo("active");
         DataGenerator.activeUser(user);
         $("span[data-test-id='login'] input").setValue(user.getLogin());
         $("span[data-test-id='password'] input").setValue(user.getPassword());
@@ -28,7 +28,7 @@ public class AuthTest {
 
     @Test
     void inputValidLogPasStat_Bocked() {
-        val user = DataGenerator.dataName("blocked");
+        val user = DataGenerator.UserInfo("blocked");
         DataGenerator.activeUser(user);
         $("span[data-test-id='login'] input").setValue(user.getLogin());
         $("span[data-test-id='password'] input").setValue(user.getPassword());
@@ -38,7 +38,7 @@ public class AuthTest {
 
     @Test
     void inputNo_Valid_LogValidPasStatActive() {
-        val user = DataGenerator.dataName("active");
+        val user = DataGenerator.UserInfo("active");
         DataGenerator.activeUser(user);
         $("span[data-test-id='login'] input").setValue(DataGenerator.generateLogin());
         $("span[data-test-id='password'] input").setValue(user.getPassword());
@@ -47,7 +47,7 @@ public class AuthTest {
     }
     @Test
     void inputValidLogNo_Valid_PasStatActive() {
-        val user = DataGenerator.dataName("active");
+        val user = DataGenerator.UserInfo("active");
         DataGenerator.activeUser(user);
         $("span[data-test-id='login'] input").setValue(user.getLogin());
         $("span[data-test-id='password'] input").setValue(DataGenerator.generatePassword());
