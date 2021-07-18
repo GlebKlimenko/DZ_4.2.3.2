@@ -38,7 +38,7 @@ public class DataGenerator {
             .log(LogDetail.ALL)
             .build();
 
-    static void activeUser(UserInfo usr) {
+    static void registrationUsers(UserInfo usr) {
         // сам запрос
         given() // "дано"
                 .spec(requestSpec) // указываем, какую спецификацию используем
